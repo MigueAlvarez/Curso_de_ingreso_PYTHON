@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 Ejercicio: if_03
 ---
@@ -40,7 +40,6 @@ class App(customtkinter.CTk):
         
         if edad > 17:
             alert("Mensaje", "MAYOR")
-        
         else:
             alert("Mensaje", "MENOR")
         

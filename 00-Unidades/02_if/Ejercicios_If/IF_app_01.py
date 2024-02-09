@@ -39,7 +39,7 @@ class App(customtkinter.CTk):
         if edad == 18:
             alert("Mensaje", f"Usted tiene 18 años")
         
-        alert("Mensaje", "Marco? Trolazo.")
+        alert("Mensaje", "Fin del programa")
         
         pass
 
