@@ -48,9 +48,6 @@ class App(customtkinter.CTk):
         
         alert("Mensaje", mensaje)
         pass
-
-        
-        
     
 if __name__ == "__main__":
     app = App()
