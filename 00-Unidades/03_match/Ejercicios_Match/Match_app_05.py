@@ -39,8 +39,6 @@ class App(customtkinter.CTk):
         match hora:
             case "7"|"8"|"9"|"10"|"11":
                 mensaje = "Es de mañana"
-            case _:
-                return
         alert("Mensaje", mensaje)
         
         pass

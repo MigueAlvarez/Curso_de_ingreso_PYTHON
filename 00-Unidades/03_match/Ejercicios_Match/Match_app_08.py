@@ -39,7 +39,7 @@ class App(customtkinter.CTk):
             case "Bariloche":
                 mensaje = "Hace frío"
             case "Mar del Plata":
-                mensaje = "Hace frío"
+                mensaje = "Hace calor"
             case "Cataratas":
                 mensaje = "Hace calor"
             case "Ushuaia":

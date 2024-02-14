@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 Ejercicio: Match_09
 ---
@@ -47,7 +47,7 @@ class App(customtkinter.CTk):
         
         self.label_destinos = customtkinter.CTkLabel(master=self, text="Destinos")
         self.label_destinos.grid(row=2, column=0, padx=20, pady=10)
-        destinos = ['Bariloche', 'Mar del plata', 'Cataratas', 'Cordoba']
+        destinos = ['Bariloche', 'Mar del Plata', 'Cataratas', 'Córdoba']
         self.combobox_destino = customtkinter.CTkComboBox(master=self, values=destinos)
         self.combobox_destino.grid(row=3, column=0, padx=20, pady=(10, 10))
 
@@ -57,6 +57,48 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
+        valor = 15000
+        estacion = self.combobox_estaciones.get()
+        destino = self.combobox_destino.get()
+        
+        match estacion:
+            case "Invierno":
+                match destino:
+                    case "Bariloche":
+                        valor_total = valor + (valor * 0.2)
+                        mensaje = f"El valor es de: ${valor_total}"
+                    case "Cataratas"|"Córdoba":
+                        valor_total = valor - (valor * 0.1)
+                        mensaje = f"El valor es de: ${valor_total}"
+                    case "Mar del Plata":
+                        valor_total = valor - (valor * 0.2)
+                        mensaje = f"El valor es de: ${valor_total}"
+            case "Verano":
+                match destino:
+                    case "Bariloche":
+                        valor_total = valor - (valor * 0.2)
+                        mensaje = f"El valor es de: ${valor_total}"
+                    case "Cataratas"|"Córdoba":
+                        valor_total = valor + (valor * 0.1)
+                        mensaje = f"El valor es de: ${valor_total}"
+                    case "Mar del Plata":
+                        valor_total = valor + (valor * 0.2)
+                        mensaje = f"El valor es de: ${valor_total}"
+            case "Primavera"|"Otoño":
+                match destino:
+                    case "Bariloche":
+                        valor_total = valor + (valor * 0.1)
+                        mensaje = f"El valor es de: ${valor_total}"
+                    case "Cataratas":
+                        valor_total = valor + (valor * 0.1)
+                        mensaje = f"El valor es de: ${valor_total}"
+                    case "Mar del Plata":
+                        valor_total = valor + (valor * 0.1)
+                        mensaje = f"El valor es de: ${valor_total}"
+                    case "Córdoba":
+                        mensaje = f"El valor es de: ${valor}"
+                        
+        alert("Mensaje", mensaje)
         pass
             
     
