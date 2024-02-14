@@ -43,6 +43,8 @@ class App(customtkinter.CTk):
             mensaje = f"Desaprobado, la nota es {nota}"
         
         alert("Mensaje", mensaje)
+        
+        
         pass  
             
 
