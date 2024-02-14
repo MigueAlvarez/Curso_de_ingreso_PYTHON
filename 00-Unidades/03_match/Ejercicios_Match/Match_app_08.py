@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 Ejercicio: Match_08
 ---
@@ -25,7 +25,7 @@ class App(customtkinter.CTk):
 
         self.title("UTN FRA")
         
-        destinos = ['Bariloche', 'Mar del plata', 'Cataratas', 'Ushuaia']
+        destinos = ['Bariloche', 'Mar del Plata', 'Cataratas', 'Ushuaia']
         self.combobox_destino = customtkinter.CTkComboBox(master=self, values=destinos)
         self.combobox_destino.grid(row=1, column=0, padx=20, pady=(10, 10))
         
@@ -34,6 +34,19 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
+        destino = self.combobox_destino.get()
+        match destino:
+            case "Bariloche":
+                mensaje = "Hace frío"
+            case "Mar del Plata":
+                mensaje = "Hace frío"
+            case "Cataratas":
+                mensaje = "Hace calor"
+            case "Ushuaia":
+                mensaje = "Hace frío"
+        alert("Mensaje", mensaje)
+        
+        
         pass
     
     

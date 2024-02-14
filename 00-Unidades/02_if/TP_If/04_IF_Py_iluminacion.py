@@ -70,6 +70,9 @@ class App(customtkinter.CTk):
                 descuento = 0.1
             else:
                 descuento = 0.05
+        else:
+            descuento = 0
+            
         importe_con_descuento = precio_sin_descuento * (1 - descuento)
         if importe_con_descuento > 4000:
             importe_con_descuento *= 0.95
