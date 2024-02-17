@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 Ejercicio: while_01
 ---
@@ -29,6 +29,11 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
+        cuenta_inicial = 0 #variable de control (por convención inician en 0)
+        while cuenta_inicial < 10:
+            alert("Mensaje", cuenta_inicial + 1)
+            cuenta_inicial += 1
+        
         pass
     
     

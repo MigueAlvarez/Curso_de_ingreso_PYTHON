@@ -5,14 +5,14 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 TP: Iluminación
 ---
 Enunciado:
 Todas las lámparas están  al mismo precio de $800 pesos final.
-		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
+		A.	Si compra 6 o más lamparitas bajo consumo tiene un descuento del 50%. 
 		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
 		C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
 		D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
@@ -43,6 +43,54 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+        precio_unitario = 800
+        precio_total = cantidad * precio_unitario
+        
+        match cantidad:
+            case 6|7|8|9|10|11|12:
+                descuento = precio_total - (precio_total * 0.5)
+                mensaje = f"El total con descuento es de: ${descuento}"
+            case 5:
+                match marca:
+                    case "ArgentinaLuz":
+                        descuento = precio_total - (precio_total * 0.4)
+                        mensaje = f"El total con descuento es de: ${descuento}"
+                    case _:
+                        descuento = precio_total - (precio_total * 0.3)
+                        mensaje = f"El total con descuento es de: ${descuento}"
+            case 4:
+                match marca:
+                    case "ArgentinaLuz" | "FelipeLamparas":
+                        descuento = precio_total - (precio_total * 0.25)
+                        mensaje = f"El total con descuento es de: ${descuento}"
+                    case _:
+                        descuento = precio_total - (precio_total * 0.2)
+                        mensaje = f"El total con descuento es de: ${descuento}"
+            case 3:
+                match marca:
+                    case "ArgentinaLuz":
+                        descuento = precio_total - (precio_total * 0.15)
+                        mensaje = f"El total con descuento es de: ${descuento}"
+                    case "FelipeLamparas":
+                        descuento = precio_total - (precio_total * 0.1)
+                        mensaje = f"El total con descuento es de: ${descuento}"
+                    case _:
+                        descuento = precio_total - (precio_total * 0.05)
+                        mensaje = f"El total con descuento es de: ${descuento}"
+            case 1 | 2:
+                match marca:
+                    case "ArgentinaLuz" | "FelipeLamparas" | "JeLuz" | "HazIluminacion" | "Osram":
+                        descuento = precio_total * cantidad
+                        mensaje = f"El total es de: ${descuento}"
+        
+        importe_con_descuento = precio_total * (1 - descuento)
+        if importe_con_descuento > 4000:
+            importe_con_descuento *= 0.95
+        
+        alert("Mensaje", mensaje)
+        
         pass
         
     

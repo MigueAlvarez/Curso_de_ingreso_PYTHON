@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 Ejercicio: while_02bis
 ---
@@ -29,6 +29,17 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
+        cuenta_inicial = 0
+        acumulador_suma = 0
+        while cuenta_inicial < 11:
+            if cuenta_inicial % 2 == 0: # % es para buscar resto 0 (numero par)
+                acumulador_suma = acumulador_suma + cuenta_inicial
+            
+            cuenta_inicial += 1
+            
+        alert("Mensaje", f"La cuenta entre 1 y 11 es: {cuenta_inicial}")
+            
+        
         pass
     
     

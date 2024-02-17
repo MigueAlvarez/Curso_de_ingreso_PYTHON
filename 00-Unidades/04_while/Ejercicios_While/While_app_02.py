@@ -29,6 +29,13 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
+        cuenta_inicial = 10
+        while cuenta_inicial > 0:
+            alert("Mensaje", cuenta_inicial)
+            cuenta_inicial -= 1
+        
+        
+        
         pass
     
     
