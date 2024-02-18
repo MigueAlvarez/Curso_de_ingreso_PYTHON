@@ -49,6 +49,9 @@ class App(customtkinter.CTk):
         precio_total = cantidad * precio_unitario
         
         match cantidad:
+            case 1 | 2:
+                descuento = precio_total * cantidad
+                mensaje = f"El total es de: ${descuento}"
             case 6|7|8|9|10|11|12:
                 descuento = precio_total - (precio_total * 0.5)
                 mensaje = f"El total con descuento es de: ${descuento}"
@@ -79,11 +82,7 @@ class App(customtkinter.CTk):
                     case _:
                         descuento = precio_total - (precio_total * 0.05)
                         mensaje = f"El total con descuento es de: ${descuento}"
-            case 1 | 2:
-                match marca:
-                    case "ArgentinaLuz" | "FelipeLamparas" | "JeLuz" | "HazIluminacion" | "Osram":
-                        descuento = precio_total * cantidad
-                        mensaje = f"El total es de: ${descuento}"
+
         
         importe_con_descuento = precio_total * (1 - descuento)
         if importe_con_descuento > 4000:
@@ -91,7 +90,7 @@ class App(customtkinter.CTk):
         
         alert("Mensaje", mensaje)
         
-        pass
+        # me aparece un error al cargar 2 unidades
         
     
 if __name__ == "__main__":
