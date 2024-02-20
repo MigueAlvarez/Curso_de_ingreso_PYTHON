@@ -36,6 +36,25 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
+        contador = 0
+        acumulador = 0
+        
+        while True:
+            numero = prompt("Mensaje", "Ingrese número")
+            if numero == None:
+                break
+            numero = int(numero)
+
+            acumulador += numero
+            contador += 1
+            
+        promedio = acumulador / contador
+        
+        self.txt_suma_acumulada.delete(0, "end")
+        self.txt_suma_acumulada.insert(0, acumulador)
+        self.txt_promedio.delete(0, "end")
+        self.txt_promedio.insert(0, promedio)
+        
         pass
 
     
@@ -43,3 +62,9 @@ if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
     app.mainloop()
+
+
+
+#while True: es un bucle infinito
+#if variable == None:     el usuario presionó cancelar
+#   break     

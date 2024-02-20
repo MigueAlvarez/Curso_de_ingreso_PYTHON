@@ -35,9 +35,22 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
+        contador = 0
+        suma_acumulada = 0
         
+        while contador > 5:
+            txt_numero = prompt("Ingrese número: ")
+            numero = float(txt_numero)
+            suma_acumulada += numero
+            contador += 1 #Variable de control
+            
+        promedio = suma_acumulada / 5
         
+        self.txt_suma_acumulada.delete(0, "end")#Borra todo lo que aparece en la caja de texto
+        self.txt_suma_acumulada.insert(0, suma_acumulada)
         
+        self.txt_promedio.delete(0, tkinter.END)
+        self.txt_promedio.insert(0, promedio)
         
         
         pass

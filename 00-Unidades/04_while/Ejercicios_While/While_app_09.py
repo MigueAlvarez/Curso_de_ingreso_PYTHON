@@ -37,9 +37,42 @@ class App(customtkinter.CTk):
         self.btn_mostrar = customtkinter.CTkButton(
             master=self, text="Comenzar Ingreso", command=self.btn_comenzar_ingreso_on_click)
         self.btn_mostrar.grid(row=2, padx=20, pady=20,
-                              columnspan=2, sticky="nsew")
+                            columnspan=2, sticky="nsew")
 
     def btn_comenzar_ingreso_on_click(self):
+        '''     forma 1 = declarando variables y solo con if 
+        minimo = 1000
+        maximo = -1000
+        '''
+        i = 0 #validador
+        
+        while i < 5:
+            numero = input("Ingrese un número")
+            numero = int(numero)
+            
+            if i == 0:           #si utilizo esto no es necesesario declarar la variable numero (1000 y -1000 en este caso) forma 2
+                maximo = numero
+                minimo = numero
+            else:
+                if numero > maximo: #valido con la forma 1, 2 y 3(max y min)
+                    maximo = numero
+                if numero < minimo:
+                    minimo = numero
+        i += 1
+        
+        print(f"Maximo: {maximo} -- Minimo: {minimo}")
+        
+        '''
+            if i == 0 or numero > maximo:   forma 3 hay que declarar si o si las 2 variables
+                maximo = numero
+            if i == 0 or numero < minimo:
+                minimo = numero
+        '''
+        
+        
+        
+        
+        
         pass
 
 

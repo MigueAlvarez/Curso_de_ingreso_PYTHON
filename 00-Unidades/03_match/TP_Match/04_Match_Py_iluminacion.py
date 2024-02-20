@@ -90,7 +90,7 @@ class App(customtkinter.CTk):
         
         alert("Mensaje", mensaje)
         
-        # me aparece un error al cargar 2 unidades
+        # no registra correctamente el valor al cargar 2 unidades
         
     
 if __name__ == "__main__":
