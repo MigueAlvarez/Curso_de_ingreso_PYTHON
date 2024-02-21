@@ -15,10 +15,10 @@ Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y ce
 por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
 
 Los datos requeridos son los siguientes:
-    Apellido
-    Edad, entre 18 y 90 años inclusive.
-    Estado civil, ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]
-    Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
+1.   Apellido
+2.   Edad, entre 18 y 90 años inclusive.
+3.   Estado civil, ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]
+4.   Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 '''
 
 
@@ -55,6 +55,22 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
+        #1.
+        apellido_user = ""
+        
+        while apellido_user == "":
+            apellido_user = prompt("Mensaje", "Ingrese su apellido: ")
+            self.txt_apellido.insert(0, apellido_user)
+        #2.
+        edad_user = None
+        while True:
+            edad = prompt("Mensaje", "Ingrese su edad: ")
+            edad_user = int(edad)
+            if edad_user < 18 and edad_user > 90:
+                self.txt_edad.insert(0, edad_user)
+            elif edad_user == None:
+                break
+
         pass
 
 

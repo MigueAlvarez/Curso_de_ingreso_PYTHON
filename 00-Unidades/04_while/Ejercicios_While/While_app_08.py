@@ -43,13 +43,16 @@ class App(customtkinter.CTk):
             numero = prompt("Mensaje", "Ingrese número")
             if numero == None:
                 break
-            numero = float(numero)
+            numero = int(numero)
             if numero == 0:
                 break
             
             if numero > 0:
                 contador_pos += numero
-            else: acumulador_neg *= numero
+            elif numero < 0:
+                acumulador_neg *= numero
+            
+            
                 
         self.txt_suma_acumulada.delete(0, "end")
         self.txt_suma_acumulada.insert(0, contador_pos)

@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 Ejercicio: while_09
 ---
@@ -50,7 +50,7 @@ class App(customtkinter.CTk):
             numero = input("Ingrese un número")
             numero = int(numero)
             
-            if i == 0:           #si utilizo esto no es necesesario declarar la variable numero (1000 y -1000 en este caso) forma 2
+            if i == 0:           #si utilizo esto no es necesesario declarar la variable numero (1000 y -1000 en este caso) forma 2 NO RECOMENDABLE
                 maximo = numero
                 minimo = numero
             else:

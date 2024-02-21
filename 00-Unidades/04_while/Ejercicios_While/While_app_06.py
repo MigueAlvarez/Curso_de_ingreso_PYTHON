@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 Ejercicio: while_06
 ---
@@ -48,7 +48,6 @@ class App(customtkinter.CTk):
         
         self.txt_suma_acumulada.delete(0, "end")#Borra todo lo que aparece en la caja de texto
         self.txt_suma_acumulada.insert(0, suma_acumulada)
-        
         self.txt_promedio.delete(0, tkinter.END)
         self.txt_promedio.insert(0, promedio)
         

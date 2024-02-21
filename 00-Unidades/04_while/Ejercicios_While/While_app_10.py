@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Miguel
+apellido: Alvarez
 ---
 Ejercicio: while_10
 ---
@@ -37,6 +37,40 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
+        acumulador_pos = 0
+        acumulador_neg = 0
+        contadores_pos = 0
+        contadores_neg = 0
+        contador_ceros = 0
+        
+        flag = True
+        minimo_pos = 0
+        # bandera = True -> Es un control de estado (puede ser True ó False)
+        # MAXIMOS Y MINIMOS NO SE INICIALIZAN
+        
+        while True:
+            numero = prompt("Mensaje", "Ingrese número")
+            if numero != None and numero != "":
+                numero = int(numero)
+            else:
+                break
+            
+            if numero > 0:
+                acumulador_pos += numero
+                contadores_pos += 1
+            elif numero < 0:
+                acumulador_neg += numero
+                contadores_neg += 1
+            else:
+                contador_ceros += 1
+            
+            
+        diferencia = contadores_pos - contadores_neg
+        
+        mensaje = f"Resultado: \n A. La suma acumulada de negativos es: {acumulador_neg}\n B. La suma acumulada de positivos es: {acumulador_pos}\n C. Cantidad de números positivos es: {contadores_pos}\n D. Cantidad de números negativos es: {contadores_neg}\n Cantidad de ceros es: {contador_ceros}\n F. La diferencia entre positivos y negativos es: {diferencia}"
+            
+        alert("Mensaje", mensaje)
+        
         pass
 
     
