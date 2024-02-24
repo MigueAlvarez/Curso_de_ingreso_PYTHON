@@ -55,25 +55,34 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        #1.
-        apellido_user = ""
+        apellido = None
+        edad = None
+        estado_civil = None
+        nro_legajo = None
         
-        while apellido_user == "":
-            apellido_user = prompt("Mensaje", "Ingrese su apellido: ")
-            self.txt_apellido.insert(0, apellido_user)
-        #2.
-        edad_user = None
-        while True:
-            edad = prompt("Mensaje", "Ingrese su edad: ")
-            edad_user = int(edad)
-            if edad_user < 18 and edad_user > 90:
-                self.txt_edad.insert(0, edad_user)
-            elif edad_user == None:
-                break
-
-        pass
-
-
+        while apellido == None:
+            apellido = prompt("Mensaje", "Ingrese su apellido:")
+            
+            edad = int(prompt("Mensaje", "Ingrese su edad:"))
+            while edad < 18 or edad > 90:
+                edad = int(prompt("Mensaje", "Ingrese su edad:"))
+                
+            estado_civil = prompt("Mensaje", "Ingrese su estado civil:")
+            while estado_civil != "Soltero/a" and estado_civil != "Casado/a" and estado_civil != "Divorciado/a" and estado_civil != "Viudo/a":
+                    estado_civil = prompt("Mensaje", "Ingrese su estado civil:")
+            
+            nro_legajo = int(prompt("Mensaje", "Ingrese número de legajo:"))
+            while nro_legajo < 1000 or nro_legajo > 9999:
+                nro_legajo = int(prompt("Mensaje", "Ingrese número de legajo:"))
+        
+        self.combobox_tipo.set(estado_civil)
+        self.txt_apellido.delete(0, "end")
+        self.txt_apellido.insert(0, apellido)
+        self.txt_edad.delete(0, "end")
+        self.txt_edad.insert(0, edad)
+        self.txt_legajo.delete(0, "end")
+        self.txt_legajo.insert(0, nro_legajo)
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

@@ -43,8 +43,8 @@ class App(customtkinter.CTk):
         contadores_neg = 0
         contador_ceros = 0
         
-        flag = True
-        minimo_pos = 0
+        '''flag = True
+        minimo_pos = 0'''
         # bandera = True -> Es un control de estado (puede ser True ó False)
         # MAXIMOS Y MINIMOS NO SE INICIALIZAN
         
@@ -67,7 +67,7 @@ class App(customtkinter.CTk):
             
         diferencia = contadores_pos - contadores_neg
         
-        mensaje = f"Resultado: \n A. La suma acumulada de negativos es: {acumulador_neg}\n B. La suma acumulada de positivos es: {acumulador_pos}\n C. Cantidad de números positivos es: {contadores_pos}\n D. Cantidad de números negativos es: {contadores_neg}\n Cantidad de ceros es: {contador_ceros}\n F. La diferencia entre positivos y negativos es: {diferencia}"
+        mensaje = f"Resultado: \n A. La suma acumulada de negativos es: {acumulador_neg}\n B. La suma acumulada de positivos es: {acumulador_pos}\n C. Cantidad de números positivos es: {contadores_pos}\n D. Cantidad de números negativos es: {contadores_neg}\n E. Cantidad de ceros es: {contador_ceros}\n F. La diferencia entre positivos y negativos es: {diferencia}"
             
         alert("Mensaje", mensaje)
         

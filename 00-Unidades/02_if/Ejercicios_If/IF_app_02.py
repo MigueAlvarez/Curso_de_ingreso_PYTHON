@@ -38,7 +38,6 @@ class App(customtkinter.CTk):
         if edad > 17:
             alert("Mensaje", "Mayor")
         
-        alert("Mensaje", "Menor")
         pass
 
         

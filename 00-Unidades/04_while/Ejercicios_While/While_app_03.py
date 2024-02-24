@@ -33,6 +33,9 @@ class App(customtkinter.CTk):
         
         while clave != "utn750":
             clave = prompt("Error", "Ingrese la clave nuevamente")
+            if clave == None:
+                break
+            
             
         
         pass
