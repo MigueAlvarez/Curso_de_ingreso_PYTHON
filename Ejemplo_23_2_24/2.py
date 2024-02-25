@@ -87,7 +87,7 @@ class App(customtkinter.CTk):
             edad = prompt("Mensaje", "Ingrese edad:")
             edad = int(edad)
             while edad < 18:
-                edad = prompt("Error", "Rengrese edad:") #Tengo la validacion de la edad
+                edad = prompt("Error", "Reingrese edad:") #Tengo la validacion de la edad
                 edad = int(edad)
             
             genero = prompt("Mensaje", "Ingrese genero:")
