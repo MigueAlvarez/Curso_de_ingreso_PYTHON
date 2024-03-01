@@ -67,7 +67,7 @@ class App(customtkinter.CTk):
             
             genero = prompt("Mensaje", "El genero es:")
             while genero != "Masculino" and genero != "Femenino" and genero != "Otro":
-                genero = prompt("Mensaje", "Erro, reingrese genero")
+                genero = prompt("Mensaje", "Error, reingrese genero")
             
             voto_neg = prompt("Mensaje", "El voto negativo es para:")
             while voto_neg != "Gianni" and voto_neg != "Giovani" and voto_neg != "Esteban":
@@ -85,7 +85,7 @@ class App(customtkinter.CTk):
             match voto_neg:
                 case "Gianni":
                     contador_gianni += 1
-                    if edad_votante > edad_joven:
+                    if edad_votante < edad_joven or contador_gianni == 1: 
                         nombre_joven = nombre_votante
                 case "Giovani":
                     contador_giovani += 1
